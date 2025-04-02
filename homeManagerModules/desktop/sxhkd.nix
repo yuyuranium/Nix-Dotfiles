@@ -6,6 +6,10 @@
     services.sxhkd.keybindings = {
       "super + Return" = "kitty";
 
+      "super + @space" = "rofi -show drun";
+
+      "super + e" = "thunar";
+
       #
       # bspwm hotkeys
       #
@@ -33,7 +37,7 @@
       #
 
       # set the window state
-      "super + {t,shift + t,s,f}" = "bspc node -t {tiled,pseudo_tiled,\~floating,\~fullscreen}";
+      "super + {t,shift + t,s,f}" = "bspc node -t {tiled,pseudo_tiled,\\~floating,\\~fullscreen}";
 
       # set the node flags
       "super + ctrl + {m,x,y,z}" = "bspc node -g {marked,locked,sticky,private}";

@@ -12,6 +12,9 @@
     services.xserver.enable = true;
     services.xserver.xkb.layout = "us";
 
+    services.xserver.autoRepeatDelay = 230;
+    services.xserver.autoRepeatInterval = 33;
+
     # Display manager and default tiling window manager
     services.displayManager.ly.enable = true;
     services.xserver.windowManager.bspwm.enable = true;

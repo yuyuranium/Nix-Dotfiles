@@ -1,8 +1,9 @@
-{ lib, config, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   config = lib.mkIf config.desktop.enable {
     services.picom = {
+      package = pkgs.picom-pijulius;
       enable = true;
       settings = {
         animations = true;
@@ -29,7 +30,7 @@
         shadow-offset-x = -8;
         shadow-offset-y = -8;
         fading = false;
-        inactive-opacity = 0.8;
+        inactive-opacity = 0.95;
         frame-opacity = 0.7;
         inactive-opacity-override = false;
         active-opacity = 1.0;

@@ -22,6 +22,12 @@
       shell = pkgs.zsh;
     };
 
+    # yuyu is a trusted user
+    nix.settings.trusted-users = [ "root" "yuyu" ];
+
+    # yuyu uses nix-command and flakes
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
     # yuyu uses home-manager
     home-manager = {
       users.yuyu = {
@@ -30,6 +36,8 @@
           homeManagerModules
         ];
       };
+      useGlobalPkgs = true;
+      useUserPackages = true;
     };
   };
 }

@@ -12,6 +12,9 @@
     home.packages = with pkgs; [
       htop
       fastfetch
+      tmux
+      bc
+      expect
     ];
   };
 }
