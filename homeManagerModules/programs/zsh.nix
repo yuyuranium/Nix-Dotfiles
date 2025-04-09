@@ -17,7 +17,7 @@
             owner = "yuyuranium";
             repo = "macOS-singularisart-prompt";
             rev = "master";
-            hash = "sha256-MyjRRJouwhCmQvU4pHF8usmHxj65/4To1L9pBJebbbw=";
+            hash = "sha256-TTnMWFbDcp0OFAx/T0H812uIc4Q5/Eid2JI6Um+2iYQ=";
           };
         }
         {
