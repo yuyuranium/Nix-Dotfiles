@@ -56,10 +56,12 @@
 
         shadow-exclude = [
           "class_g = 'Dunst'"
+          "class_g = 'slop'"
         ];
 
         blur-background-exclude = [
           "class_g = 'Dunst'"
+          "class_g = 'slop'"
         ];
 
         backend = "glx";

@@ -10,6 +10,8 @@
 
       "super + e" = "thunar";
 
+      "super + ctrl + {_,shift + }4" = "gscreenshot {-s, -sc}";
+
       #
       # bspwm hotkeys
       #

@@ -19,6 +19,7 @@
   config = lib.mkIf config.desktop.enable {
     home.packages = with pkgs; [
       dconf
+      gscreenshot
     ];
 
     xsession.enable = true;
