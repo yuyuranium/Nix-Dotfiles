@@ -1,18 +1,19 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
   config = {
     programs.neovim = {
       enable = true;
-      extraWrapperArgs = [
-        "--suffix"
-        "LIBRARY_PATH"
-        ":"
-        "${lib.makeLibraryPath [ pkgs.stdenv.cc.cc pkgs.zlib ]}"
-        "--suffix"
-        "PKG_CONFIG_PATH"
-        ":"
-        "${lib.makeSearchPathOutput "dev" "lib/pkgconfig" [ pkgs.stdenv.cc.cc pkgs.zlib ]}"
+
+      extraPackages = with pkgs; [
+        clang-tools
+        verilator
+        lua-language-server
+        nil
+        nixpkgs-fmt
+        selene
+        stylua
+        bluespec
       ];
     };
 
@@ -22,6 +23,7 @@
       cargo
       unzip
       xsel
+      ripgrep
     ];
   };
 }
