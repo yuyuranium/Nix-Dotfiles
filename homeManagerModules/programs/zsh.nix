@@ -1,11 +1,10 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   config = {
     programs.zsh = {
       enable = true;
-
-      initExtraFirst = ''
+      initContent = lib.mkBefore ''
         typeset -A __Prompt
       '';
 
@@ -17,7 +16,7 @@
             owner = "yuyuranium";
             repo = "macOS-singularisart-prompt";
             rev = "master";
-            hash = "sha256-TTnMWFbDcp0OFAx/T0H812uIc4Q5/Eid2JI6Um+2iYQ=";
+            hash = "sha256-l2bljxGQMMGxBc3q2pfPmAExobCNnDH+EuU4UKOW+vQ=";
           };
         }
         {
