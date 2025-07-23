@@ -43,8 +43,8 @@
 
       historySubstringSearch = {
         enable = true;
-        searchUpKey = [ "$terminfo[kcuu1]" ];
-        searchDownKey = [ "$terminfo[kcud1]" ];
+        searchUpKey = [ "$terminfo[kcuu1]" "^[[A" ];
+        searchDownKey = [ "$terminfo[kcud1]" "^[[B" ];
       };
 
       sessionVariables = {
@@ -53,10 +53,17 @@
         EDITOR = "nvim";
       };
 
-      shellAliases = {
+      shellAliases =
+        let
+          lib = pkgs.lib;
+          isLinux = lib.strings.hasSuffix "linux" pkgs.stdenv.hostPlatform.system;
+          isDarwin = lib.strings.hasSuffix "darwin" pkgs.stdenv.hostPlatform.system;
+        in
+      {
         grep = "grep --color=auto";
         cp = "cp -i";
         mv = "mv -i";
+        ls = if isDarwin then "ls -G" else if isLinux then "ls --color=auto" else "ls";
       };
     };
   };

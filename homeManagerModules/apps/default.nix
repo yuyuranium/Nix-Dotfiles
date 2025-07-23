@@ -13,9 +13,8 @@
 
   config = lib.mkIf config.apps.enable {
     home.packages = with pkgs; [
-      xfce.thunar
-      microsoft-edge
-      mattermost-desktop
+      # microsoft-edge
+      # mattermost-desktop
     ];
   };
 }

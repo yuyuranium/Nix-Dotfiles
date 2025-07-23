@@ -15,6 +15,7 @@
       tmux
       bc
       expect
+      file
     ];
   };
 }

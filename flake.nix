@@ -32,5 +32,15 @@
           ];
         };
       };
+
+      homeConfigurations = {
+        mbp14 = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+          modules = [
+            ./homeManagerModules
+            ./hosts/mbp14/home.nix
+          ];
+        };
+      };
     };
 }
