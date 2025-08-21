@@ -12,10 +12,6 @@
   ];
 
   config = lib.mkIf config.apps.enable {
-    home.packages = with pkgs; [
-      # microsoft-edge
-      # mattermost-desktop
-    ];
   };
 }
 

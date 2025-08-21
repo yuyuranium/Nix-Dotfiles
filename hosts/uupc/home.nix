@@ -39,6 +39,16 @@
     # '')
   ];
 
+  xsession.initExtra = ''
+    xrandr --output DP-1 --mode 1920x1200 --pos 0x0 --rotate left --output HDMI-1 --off --output HDMI-2 --primary --mode 1920x1080 --pos 1200x332 --rotate normal
+    xsetroot -cursor_name left_ptr
+  '';
+
+  xsession.windowManager.bspwm.monitors = {
+    DP-1 = [ "1" "2" "3" ];
+    HDMI-2 = [ "4" "5" "6" ];
+  };
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
