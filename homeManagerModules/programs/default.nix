@@ -16,6 +16,8 @@
       bc
       expect
       file
+      dnsutils
+      claude-code
     ];
   };
 }

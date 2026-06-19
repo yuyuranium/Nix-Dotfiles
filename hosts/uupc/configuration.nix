@@ -76,6 +76,7 @@
     curl
     git
     python3
+    nfs-utils
   ] ++ [ attic.packages.x86_64-linux.attic-client ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -93,7 +94,26 @@
   services.openssh.settings = {
     PasswordAuthentication = false;
     PermitRootLogin = "no";
+    X11Forwarding = true;
   };
+
+  services.tailscale = {
+    enable = true;
+  };
+
+  # Ensure the nfs kernel module is loaded during boot
+  boot.initrd.kernelModules = [ "nfs" ];
+  # Ensure "nfs" is recognized as a supported filesystem type
+  boot.supportedFilesystems = [ "nfs" ];
+
+  fileSystems."/opt/CIC" = {
+    device = "CASGPU:VOL1/Shared/CIC";
+    fsType = "nfs";
+    options = [ "defaults" "x-systemd.automount" "noauto" "ro" ];
+  };
+
+  virtualisation.docker.enable = true;
+  users.users.yuyu.extraGroups = [ "docker" ];
 
   programs.nix-ld.enable = true;
 

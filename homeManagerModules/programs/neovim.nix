@@ -14,6 +14,7 @@
         selene
         stylua
         bluespec
+        tinymist
       ];
     };
 

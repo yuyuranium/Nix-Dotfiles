@@ -21,6 +21,7 @@
       microsoft-edge
       mattermost-desktop
       xfce.thunar
+      xfce.tumbler
       dconf
       gscreenshot
     ];
