@@ -20,8 +20,8 @@
     home.packages = with pkgs; [
       microsoft-edge
       mattermost-desktop
-      xfce.thunar
-      xfce.tumbler
+      thunar
+      tumbler
       dconf
       gscreenshot
     ];
@@ -36,6 +36,8 @@
 
     gtk.theme.name = "Matcha-dark-azul";
     gtk.theme.package = pkgs.matcha-gtk-theme;
+
+    gtk.gtk4.theme = null;
 
     gtk.iconTheme.name = "Papirus-Dark";
     gtk.iconTheme.package = pkgs.papirus-icon-theme;

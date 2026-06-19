@@ -4,6 +4,8 @@
   config = {
     programs.neovim = {
       enable = true;
+      withRuby = false;
+      withPython3 = false;
 
       extraPackages = with pkgs; [
         clang-tools
